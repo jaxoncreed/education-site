@@ -3,8 +3,8 @@ import {IndexRoute, Route} from 'react-router';
 
 import Layout from './components/layout/Layout.jsx';
 import Home from './components/home/Home.jsx';
-import ScenarioPage from './components/scenarios/ScenarioPage.jsx';
-import ScenarioEditorPage from './components/scenarios/ScenarioEditorPage.jsx';
+import Assignment from './components/assignment/Assignment.jsx';
+import SubmitAssignment from './components/submitAssignment/submitAssignment.jsx';
 
 export default () => {
   return (
@@ -13,8 +13,8 @@ export default () => {
       <IndexRoute component={Home}/>
 
       { /* Routes */ }
-      <Route path="/scenarios/:id" component={ScenarioPage}/>
-      <Route path="/scenarioeditor" component={ScenarioEditorPage}/>
+      <Route path="/assignment" component={SubmitAssignment}/>
+      <Route path="/assignment/:id" component={Assignment} />
 
       { /* Catch all route */ }
       { /* <Route path="*" component={NotFound} status={404} /> */ }

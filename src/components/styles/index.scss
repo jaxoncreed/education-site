@@ -3,79 +3,78 @@
 
 @import "variables";
 
-// basics
+.headerNav {
+  height: 70px;
+  border-bottom: 1px solid $grey-light;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: $margin;
+  padding-right: $margin;
 
-body {
-  background-color: $grey-lightest;
+  ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+
+    li {
+      margin: 0;
+      margin-left: $margin;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-text;
+  }
+  a:hover {
+    color: $cyan;
+  }
 }
 
-img {
-	display: block;
-	width: 100%;
-	height: auto;
+.banner {
+  height: 400px;
+  background-image: url("/images/background.png");
+  background-color: $cyan;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    color: $white;
+  }
+
+  .searchBar {
+    input[type=text] {
+      width: 300px;
+      margin-right: 16px;
+    }
+  }
 }
 
-// typography
+.searchResults {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: $margin;
+  padding-right: $margin;
 
-.lead {
-	margin-top: 0;
-	margin-bottom: 2rem;
-	font-size: 1.8rem;
-	line-height: 1.5;
-}
+  .searchCard {
+    width: 300px;
+    height: 200px;
+    margin: 16px;
+    padding: 16px;
+    border: 1px solid $grey-light;
 
-h2.lead {
-	font-weight: 300;
-}
-
-h5 {
-	font-weight: 600;
-}
-
-.title {
-	font-weight: 600;
-	margin-bottom: 0;
-	margin-top: 2rem;
-}
-
-.textCenter {
-	text-align: center;
-}
-
-// layout
-
-.container {
-	background-color: $white;
-	border: 1px solid #E0E0E0;
-	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.05);
-	padding: 2rem;
-}
-
-.card {
-	background-color: $grey-lightest;
-	border: 1px solid #E0E0E0;
-	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.05);
-	margin-bottom: 2rem;
-}
-
-.steps {
-	padding: 1rem;
-	li {
-		list-style: none;
-	}
-}
-
-// scenario screens
-
-.scene {
-	margin-bottom: 2rem;
-}
-
-.choices {
-	text-align: center;
-
-	button {
-		margin-left: 1rem;
-		margin-right: 1rem;
-	}
+    h2 {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+    p {
+      margin-bottom: 0px;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-# Safe Steps Frontend
+# Education Site Frontend
 
 Template cloned from https://github.com/erikras/react-redux-universal-hot-example
 

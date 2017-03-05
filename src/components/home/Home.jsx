@@ -19,23 +19,46 @@ export default class Home extends Component {
   }
   render() {
     return (
-      <div className={s.container}>
-        <h1 className={s.title + ' ' + s.textCenter}>Safe Steps</h1>
-        <h2 className={s.lead + ' ' + s.textCenter}>Scenarios to demonstrate how to handle cases of domestic violence</h2>
-        {this.props.scenarios.map((scenario) => {
-          return (
-            <div className={s.row + ' ' + s.card} key={scenario._id}>
-              <div className={s.four + ' ' + s.columns}>
-                <Link to={'/scenarios/' + scenario._id}><img src="http://placehold.it/350x200"></img></Link>
-              </div>
-              <div className={s.eight + ' ' + s.columns}>
-                <p className={s.title + ' ' + s.lead}>{scenario.title}</p>
-                <p>Scenario description describing what will be simulated.</p>
-                <Link to={'/scenarios/' + scenario._id}>Enter Scenario →</Link>
-              </div>
-            </div>
-          );
-        })}
+      <div>
+        <div className={s.banner}>
+          <h1>Find Tutoring for your Classes</h1>
+          <form className={s.searchBar}>
+            <input type="text" placeholder="Find Classes / Assignments / Schools" />
+            <input type="submit" value="Search" className={s['button-primary']} />
+          </form>
+        </div>
+        <div className={s.searchResults}>
+          <div className={s.searchCard}>
+            <img src="http://placehold.it/300x110" />
+            <h2>Homework 5</h2>
+            <p>CS 1301</p>
+            <p>Georgia Institute of Technology</p>
+          </div>
+          <div className={s.searchCard}>
+            <img src="http://placehold.it/300x110" />
+            <h2>Homework 5</h2>
+            <p>CS 1301</p>
+            <p>Georgia Institute of Technology</p>
+          </div>
+          <div className={s.searchCard}>
+            <img src="http://placehold.it/300x110" />
+            <h2>Homework 5</h2>
+            <p>CS 1301</p>
+            <p>Georgia Institute of Technology</p>
+          </div>
+          <div className={s.searchCard}>
+            <img src="http://placehold.it/300x110" />
+            <h2>Homework 5</h2>
+            <p>CS 1301</p>
+            <p>Georgia Institute of Technology</p>
+          </div>
+          <div className={s.searchCard}>
+            <img src="http://placehold.it/300x110" />
+            <h2>Homework 5</h2>
+            <p>CS 1301</p>
+            <p>Georgia Institute of Technology</p>
+          </div>
+        </div>
       </div>
     );
   }
