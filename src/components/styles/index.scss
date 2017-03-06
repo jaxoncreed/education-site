@@ -68,6 +68,9 @@
     margin: 16px;
     padding: 16px;
     border: 1px solid $grey-light;
+    cursor: pointer;
+    text-decoration: none;
+    color: $grey-darkest;
 
     h2 {
       font-size: 20px;
@@ -77,4 +80,46 @@
       margin-bottom: 0px;
     }
   }
+  .searchCard:hover {
+    background-color: $grey-lightest;
+  }
+}
+
+/* video player */
+.videoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+
+  /* Thin Displays */
+  @media screen and (max-aspect-ratio: 5/4) {
+    flex-direction: column;
+
+    .videoPlayer {
+        width: 100%;
+
+        video {
+          width: 100%;
+        }
+    }
+  }
+
+  /* Thicker Displays */
+  @media screen and (min-aspect-ratio: 5/4) {
+    flex-direction: column;
+
+    .videoPlayer {
+        width: 70vh;
+
+        video {
+          width: 100%;
+        }
+    }
+  }
+}
+
+.container {
+  border: 1px solid $grey-light;
+  padding: 16px;
 }

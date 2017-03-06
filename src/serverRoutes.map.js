@@ -2,13 +2,13 @@
 const routes = [
   {
   	method: 'get',
-  	path: '/api/scenario',
-  	handler: require('./serverHandlers/getAllScenarios.handler.js')
+  	path: '/api/assignment',
+  	handler: require('./serverHandlers/getAllAssignments.handler.js')
   },
   {
     method: 'get',
-    path: '/api/scenario/:id',
-    handler: require('./serverHandlers/getOneScenario.handler.js')
+    path: '/api/assignment/:id',
+    handler: require('./serverHandlers/getOneAssignment.handler.js')
   },
   {
     method: 'get',

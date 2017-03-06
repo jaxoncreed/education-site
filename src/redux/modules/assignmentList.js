@@ -1,9 +1,9 @@
-const FETCH = 'scenarioList/FETCH';
-const FETCH_SUCCESS = 'scenarioList/FETCH_SUCCESS';
-const FETCH_FAIL = 'scenarioList/FETCH_FAIL';
+const FETCH = 'assignmentList/FETCH';
+const FETCH_SUCCESS = 'assignmentList/FETCH_SUCCESS';
+const FETCH_FAIL = 'assignmentList/FETCH_FAIL';
 
 const initialState = {
-  scenarios: [],
+  assignments: [],
   loading: false
 };
 
@@ -18,7 +18,7 @@ export default function reducer(state = initialState, action = {}) {
       return {
         ...state,
         loading: false,
-        scenarios: action.result
+        assignments: action.result
       };
     case FETCH_FAIL:
       return {
@@ -30,9 +30,9 @@ export default function reducer(state = initialState, action = {}) {
   }
 }
 
-export function getScenarios() {
+export function getAssignments(q) {
   return {
     types: [FETCH, FETCH_SUCCESS, FETCH_FAIL],
-    promise: (client) => client.get('/scenario')
+    promise: (client) => client.get('/assignment?q=' + (q || ""))
   };
 }
