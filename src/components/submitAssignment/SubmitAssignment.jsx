@@ -1,9 +1,9 @@
 import React, {Component, PropTypes} from 'react';
-import { asyncConnect } from 'redux-async-connect';
+// import { asyncConnect } from 'redux-async-connect';
 import s from 'components/styles/index.scss';
 // import {getScenarios} from 'redux/modules/scenarioList.js';
-import {connect} from 'react-redux';
-import {Link} from 'react-router';
+// import {connect} from 'react-redux';
+// import {Link} from 'react-router';
 
 /* @asyncConnect([{
   promise: ({store: {dispatch}}) => {

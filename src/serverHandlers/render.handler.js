@@ -18,7 +18,12 @@ export default function(req, res) {
     webpackIsomorphicTools.refresh();
   }
 
-  let data = {};
+  let data = {
+    auth0: {
+      auth0Client: process.env.AUTH0_CLIENT,
+      auth0Domain: process.env.AUTH0_DOMAIN
+    }
+  };
 
   const client = new ApiClient(req);
   const memoryHistory = createHistory(req.originalUrl);
@@ -30,7 +35,7 @@ export default function(req, res) {
       ReactDOM.renderToString(<Html assets={webpackIsomorphicTools.assets()} store={store}/>));
   }
 
-  if (!__DISABLE_SSR__) {
+  if (__DISABLE_SSR__) {
     hydrateOnClient();
     return;
   }

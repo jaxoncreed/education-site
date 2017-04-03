@@ -3,7 +3,7 @@ import s from 'components/styles/index.scss';
 
 class VideoPlayer extends Component {
   render() {
-		return (
+    return (
 			<div className={s.videoContainer}>
         <div className={s.videoPlayer}>
   				<video controls autoPlay>
@@ -12,7 +12,7 @@ class VideoPlayer extends Component {
         </div>
 			</div>
 		);
-	}
+  }
 }
 
 export default VideoPlayer;

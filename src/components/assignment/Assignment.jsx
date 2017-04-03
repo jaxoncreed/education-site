@@ -3,7 +3,7 @@ import { asyncConnect } from 'redux-async-connect';
 import s from 'components/styles/index.scss';
 import {getAssignment} from 'redux/modules/currentAssignment.js';
 import {connect} from 'react-redux';
-import {Link} from 'react-router';
+// import {Link} from 'react-router';
 import VideoPlayer from './VideoPlayer.jsx';
 
 @asyncConnect([{

@@ -33,6 +33,6 @@ export default function reducer(state = initialState, action = {}) {
 export function getAssignments(q) {
   return {
     types: [FETCH, FETCH_SUCCESS, FETCH_FAIL],
-    promise: (client) => client.get('/assignment?q=' + (q || ""))
+    promise: (client) => client.get('/assignment?q=' + (q || ''))
   };
 }

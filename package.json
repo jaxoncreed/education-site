@@ -58,6 +58,7 @@
     }
   },
   "dependencies": {
+    "auth0-lock": "^10.14.0",
     "autoprefixer-loader": "^3.1.0",
     "babel-core": "^6.5.2",
     "babel-eslint": "^5.0.0-beta6",
