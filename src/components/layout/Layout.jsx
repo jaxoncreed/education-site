@@ -28,26 +28,23 @@ export default class Layout extends Component {
     logout: PropTypes.func,
     loggedIn: PropTypes.bool
   };
-  constructor(props) {
-    super(props);
-    if (!this.state.auth0) {
-      const lock = new Auth0Lock(this.props.auth0Client, this.props.auth0Domain);
-      lock.on('authenticated', (authResult) => {
-        lock.getUserInfo(authResult.accessToken, (err, profile) => {
-          if (err) {
-            // Handle error
-            return;
-          }
+  componentDidMount() {
+    const lock = new Auth0Lock(this.props.auth0Client, this.props.auth0Domain);
+    lock.on('authenticated', (authResult) => {
+      lock.getUserInfo(authResult.accessToken, (err, profile) => {
+        if (err) {
+          // Handle error
+          return;
+        }
 
-          localStorage.setItem('accessToken', authResult.accessToken);
-          localStorage.setItem('profile', JSON.stringify(profile));
-          this.props.login(profile.email);
-        });
+        localStorage.setItem('accessToken', authResult.accessToken);
+        localStorage.setItem('profile', JSON.stringify(profile));
+        console.log(profile);
+        this.props.login(profile.email);
       });
-      this.state = {
-        auth0: lock
-      };
-    }
+    });
+    this.lock = lock;
+    console.log(this);
     if (localStorage.getItem('profile')) {
       this.props.login(JSON.parse(localStorage.getItem('profile')).email);
     }
@@ -62,9 +59,10 @@ export default class Layout extends Component {
           <div>
             <ul className={s['navbar-list']}>
               <li><Link to="/about">ABOUT</Link></li>
-              <li><Link to="/assignment">SUBMIT A NEW ASSIGNMENT</Link></li>
-              {!this.props.loggedIn && <li><a onClick={() => this.state.auth0.show({ initialScreen: 'signUp' })}>CREATE ACCOUNT</a></li>}
-              {!this.props.loggedIn && <li><a onClick={() => this.state.auth0.show()}>LOG IN</a></li>}
+              {!this.props.loggedIn && <li><a onClick={() => this.lock.show({
+                initialScreen: 'signUp'
+              })}>CREATE ACCOUNT</a></li>}
+              {!this.props.loggedIn && <li><a onClick={() => this.lock.show()}>LOG IN</a></li>}
               {this.props.loggedIn && <li><Link to="/profile">PROFILE</Link></li>}
               {this.props.loggedIn && <li><a onClick={this.props.logout}>LOG OUT</a></li>}
             </ul>

@@ -8,7 +8,8 @@ import {Link} from 'react-router';
 
 @asyncConnect([{
   promise: ({store: {dispatch}, location: { query: {q}}}) => {
-    return dispatch(getAssignments(q));
+    console.log('promising');
+    return Promise.all([dispatch(getAssignments(q))]);
   }
 }])
 @connect(state => ({

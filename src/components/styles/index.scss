@@ -111,10 +111,12 @@
     flex-direction: column;
 
     .videoPlayer {
-        width: 70vh;
+        height: 70vh;
+        width: 100%;
 
         video {
           width: 100%;
+          height: 70vh;
         }
     }
   }
@@ -123,4 +125,13 @@
 .container {
   border: 1px solid $grey-light;
   padding: 16px;
+}
+
+.skipSection {
+  overflow-x: auto;
+  display: flex;
+
+  button {
+    margin: 8px;
+  }
 }
