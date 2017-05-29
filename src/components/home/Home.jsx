@@ -8,7 +8,8 @@ import {Link} from 'react-router';
 
 @asyncConnect([{
   promise: ({store: {dispatch}, location: { query: {q}}}) => {
-    return dispatch(getAssignments(q));
+    console.log('promising');
+    return Promise.all([dispatch(getAssignments(q))]);
   }
 }])
 @connect(state => ({
@@ -22,8 +23,8 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: this.props.location.q || ""
-    }
+      search: this.props.location.q || ''
+    };
   }
   submit = (e) => {
     e.preventDefault();
@@ -45,13 +46,13 @@ export default class Home extends Component {
         <div className={s.searchResults}>
           {this.props.assignments.map((assignment) => {
             return (
-              <Link className={s.searchCard} to={'/assignment/' + assignment._id}>
+              <Link className={s.searchCard} to={'/assignment/' + assignment._id} key={assignment._id}>
                 <img src="http://placehold.it/300x110" />
                 <h2>{assignment.title}</h2>
                 <p>{assignment.subject} {assignment.classNumber}: {assignment.className}</p>
                 <p>{assignment.school}</p>
               </Link>
-            )
+            );
           })}
         </div>
       </div>
