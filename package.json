@@ -28,7 +28,7 @@
       "env": {
         "NODE_PATH": "./src",
         "NODE_ENV": "prod",
-        "PORT": 3000,
+        "PORT": 8080,
         "APIPORT": 3030
       }
     },
@@ -53,7 +53,8 @@
     "build": {
       "command": "webpack --verbose --colors --display-error-details --config webpack/prod.config.js",
       "env": {
-        "NODE_ENV": "production"
+        "NODE_PATH": "./src",
+	"NODE_ENV": "production"
       }
     }
   },
